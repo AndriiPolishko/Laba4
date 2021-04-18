@@ -142,6 +142,33 @@ Laba4/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Laba4.dir\build.make CMakeFiles/Laba4.dir/build
 .PHONY : Laba4/fast
 
+Archiver.obj: Archiver.cpp.obj
+
+.PHONY : Archiver.obj
+
+# target to build an object file
+Archiver.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Laba4.dir\build.make CMakeFiles/Laba4.dir/Archiver.cpp.obj
+.PHONY : Archiver.cpp.obj
+
+Archiver.i: Archiver.cpp.i
+
+.PHONY : Archiver.i
+
+# target to preprocess a source file
+Archiver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Laba4.dir\build.make CMakeFiles/Laba4.dir/Archiver.cpp.i
+.PHONY : Archiver.cpp.i
+
+Archiver.s: Archiver.cpp.s
+
+.PHONY : Archiver.s
+
+# target to generate assembly for a file
+Archiver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Laba4.dir\build.make CMakeFiles/Laba4.dir/Archiver.cpp.s
+.PHONY : Archiver.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -178,6 +205,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Laba4
+	@echo ... Archiver.obj
+	@echo ... Archiver.i
+	@echo ... Archiver.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
