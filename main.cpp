@@ -49,12 +49,12 @@ void fileopening(string input,string output,string mode)
     if(mode == "archive")
     {
         ifstream fin(output + ".bin", ios::binary | ios::in | ios::app);
-        ofstream fout(input + ".bin", ios::binary | ios::in | ios::app);
+        ofstream fout(input + ".bin", ios::binary | ios::in );
         RunLenght_archiver(fout, fin);
     }
     if(mode=="dearchive") {
         ifstream fin(input + ".bin", ios::binary | ios::in | ios::app);
-        ofstream fout(output + ".bin", ios::binary | ios::in | ios::app);
+        ofstream fout(output + ".bin", ios::binary | ios::in );
         RunLenght_dearchiver(fout, fin);
     }
 }
