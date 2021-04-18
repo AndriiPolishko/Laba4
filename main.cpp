@@ -7,6 +7,7 @@ using namespace std;
 void fileopening(string ,string ,string);
 void RunLenght_archiver(ofstream &, ifstream &);
 void RunLenght_dearchiver(ofstream &,ifstream &);
+string string_mult(int,char);
 int main() {
     //for tests
     /*ifstream fin;
@@ -33,19 +34,29 @@ int main() {
     }
 
     cout<<ndata[ndata.size()-2];*/
-    fileopening("input","output","archive");
+
+    fileopening("input","output","dearchive");
+//    string data="3a2b1c",ndata="";
+//    for(size_t i = 0;i<data.size();i+=2)
+//    {
+//        ndata+=string_mult(int(data[i])-48,data[i+1]);
+//    }
+//    cout<<ndata;
     return 0;
 }
 void fileopening(string input,string output,string mode)
 {
-    ifstream fin(output+".bin",ios::binary|ios::in|ios::app);
-    ofstream fout(input+".bin",ios::binary|ios::in|ios::app);
-    if(mode=="archive")
-        RunLenght_archiver(fout,fin);
-    if(mode=="dearchive")
-        RunLenght_dearchiver(fout,fin);
-
-
+    if(mode == "archive")
+    {
+        ifstream fin(output + ".bin", ios::binary | ios::in | ios::app);
+        ofstream fout(input + ".bin", ios::binary | ios::in | ios::app);
+        RunLenght_archiver(fout, fin);
+    }
+    if(mode=="dearchive") {
+        ifstream fin(input + ".bin", ios::binary | ios::in | ios::app);
+        ofstream fout(output + ".bin", ios::binary | ios::in | ios::app);
+        RunLenght_dearchiver(fout, fin);
+    }
 }
 
 void RunLenght_archiver(ofstream &fout, ifstream &fin)
@@ -64,7 +75,23 @@ void RunLenght_archiver(ofstream &fout, ifstream &fin)
     }
     fout.write( (char *)&ndata, sizeof(ndata));
 }
+void RunLenght_dearchiver(ofstream &fout, ifstream &fin)
+{
+    string data(istreambuf_iterator<char>(fin), {}),ndata="";
+    for(size_t i = 0;i<data.size();i+=2)
+    {
+        ndata+=string_mult(int(data[i])-48,data[i+1]);
+    }
+    fout.write( (char *)&ndata, sizeof(ndata));
+}
 
+string string_mult(int num,char ch)
+{
+    string res="";
+    for(size_t i = 0;i < num;i++)
+        res+=ch;
+    return res;
+}
 /*class User
         {
 public:
