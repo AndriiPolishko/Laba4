@@ -1,0 +1,3 @@
+C:/Users/Roman/source/repos/Laba4/out/build/x64-Debug/CMakeFiles/Laba4.dir
+C:/Users/Roman/source/repos/Laba4/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/Roman/source/repos/Laba4/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
