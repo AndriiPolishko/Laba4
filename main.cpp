@@ -21,10 +21,10 @@ int main() {
     std::string y(std::istreambuf_iterator<char>(fin), {});
     cout<<y;
     fin.close();*/
-    cout<<"Enter what type of action you want to do : a for archive or d for dearchive";
+    cout<<"Enter what type of action you want to do : 'a' for archive or 'd' for dearchive\n";
     string action;
     cin>>action;
-    fileopening("input","output",action);
+    fileopening("archived","dearchived",action);
     return 0;
 }
 
@@ -57,7 +57,7 @@ void RunLenght_archiver(ofstream &fout, ifstream &fin)
         ndata+=to_string(inrow)+data[i];
         inrow = 1;
     }
-    fout.write( (char *)&ndata[0], sizeof(ndata));
+    fout.write( (char *)&ndata[0], ndata.size());
 }
 
 void RunLenght_dearchiver(ofstream &fout, ifstream &fin)
@@ -67,7 +67,7 @@ void RunLenght_dearchiver(ofstream &fout, ifstream &fin)
     {
         ndata+=string_mult(int(data[i])-48,data[i+1]);
     }
-    fout.write( (char *)&ndata[0], sizeof(ndata));
+    fout.write( (char *)&ndata[0], ndata.size());
 }
 
 string string_mult(int num,char ch)
