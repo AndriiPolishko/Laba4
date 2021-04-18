@@ -30,7 +30,7 @@ int main() {
 
 void fileopening(string input,string output,string mode)
 {
-    if(mode == "a=")
+    if(mode == "a")
     {
         ifstream fin(output + ".bin", ios::binary | ios::in | ios::app);
         ofstream fout(input + ".bin", ios::binary | ios::in );
