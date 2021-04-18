@@ -5,33 +5,66 @@
 using namespace std;
 
 void fileopening(string ,string ,string);
-void archiver(ofstream &,ifstream &);
-void dearchiver(ofstream &,ifstream &);
+void RunLenght_archiver(ofstream &, ifstream &);
+void RunLenght_dearchiver(ofstream &,ifstream &);
 int main() {
     //for tests
-   /* ifstream fin;
+    /*ifstream fin;
     ofstream fout;
-    fout.open("test.bin",ios::binary|ios::out);
-    fin.open("test.bin",ios::binary|ios::in);
-    string x="a";
+    fout.open("test.bin",ios::binary|ios::out|ios::app);
+    fin.open("test.bin",ios::binary|ios::in|ios::app);
+    string x="ab";
     fout.write(x.data(), x.size());
     fout.close();
     std::string y(std::istreambuf_iterator<char>(fin), {});
     cout<<y;
     fin.close();*/
+    /*string data="aaaabbbaaccce   ",ndata;
+    int inrow = 1;
+    for(size_t i = 0;i<data.size();i++)
+    {
+        while(data[i]==data[i+1] && i+1<data.size())
+        {
+            i++;
+            inrow++;
+        }
+        ndata+=to_string(inrow)+data[i];
+        inrow = 1;
+    }
+
+    cout<<ndata[ndata.size()-2];*/
+    fileopening("input","output","archive");
     return 0;
 }
 void fileopening(string input,string output,string mode)
 {
-    ifstream fin(output+".bin",ios::binary|ios::in);
-    ofstream fout(input+".bin",ios::binary|ios::in);
+    ifstream fin(output+".bin",ios::binary|ios::in|ios::app);
+    ofstream fout(input+".bin",ios::binary|ios::in|ios::app);
     if(mode=="archive")
-        archiver(fout,fin);
+        RunLenght_archiver(fout,fin);
     if(mode=="dearchive")
-        dearchiver(fout,fin);
+        RunLenght_dearchiver(fout,fin);
 
 
 }
+
+void RunLenght_archiver(ofstream &fout, ifstream &fin)
+{
+    string data(istreambuf_iterator<char>(fin), {}),ndata;
+    int inrow = 1;
+    for(size_t i = 0;i<data.size();i++)
+    {
+        while(data[i]==data[i+1] && i+1<data.size())
+        {
+            i++;
+            inrow++;
+        }
+        ndata+=to_string(inrow)+data[i];
+        inrow = 1;
+    }
+    fout.write( (char *)&ndata, sizeof(ndata));
+}
+
 /*class User
         {
 public:
