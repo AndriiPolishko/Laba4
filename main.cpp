@@ -36,7 +36,7 @@ void fileopening(string input,string output,string mode)
         ofstream fout(input + ".bin", ios::binary | ios::in );
         RunLenght_archiver(fout, fin);
     }
-    if(mode=="d=") {
+    if(mode=="d") {
         ifstream fin(input + ".bin", ios::binary | ios::in | ios::app);
         ofstream fout(output + ".bin", ios::binary | ios::in );
         RunLenght_dearchiver(fout, fin);
