@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/ramp8/Laboratorni_Z_OP/Laba4/cmake-build-debug/Archiver.cpp">
+			<Option target="Laba4"/>
+		</Unit>
+		<Unit filename="C:/Users/ramp8/Laboratorni_Z_OP/Laba4/cmake-build-debug/Archiver.h">
+			<Option target="Laba4"/>
+		</Unit>
 		<Unit filename="C:/Users/ramp8/Laboratorni_Z_OP/Laba4/main.cpp">
 			<Option target="Laba4"/>
 		</Unit>

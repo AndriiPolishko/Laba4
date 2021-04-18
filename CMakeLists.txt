@@ -3,4 +3,4 @@ project(Laba4)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Laba4 main.cpp)
+add_executable(Laba4 main.cpp cmake-build-debug/Archiver.h cmake-build-debug/Archiver.cpp)
