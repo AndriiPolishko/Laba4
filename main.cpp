@@ -8,8 +8,9 @@ void fileopening(string ,string ,string);
 void RunLenght_archiver(ofstream &, ifstream &);
 void RunLenght_dearchiver(ofstream &,ifstream &);
 string string_mult(int,char);
+
 int main() {
-    //for tests
+    //розбирався з файлами
     /*ifstream fin;
     ofstream fout;
     fout.open("test.bin",ios::binary|ios::out|ios::app);
@@ -20,39 +21,22 @@ int main() {
     std::string y(std::istreambuf_iterator<char>(fin), {});
     cout<<y;
     fin.close();*/
-    /*string data="aaaabbbaaccce   ",ndata;
-    int inrow = 1;
-    for(size_t i = 0;i<data.size();i++)
-    {
-        while(data[i]==data[i+1] && i+1<data.size())
-        {
-            i++;
-            inrow++;
-        }
-        ndata+=to_string(inrow)+data[i];
-        inrow = 1;
-    }
-
-    cout<<ndata[ndata.size()-2];*/
-
-    fileopening("input","output","dearchive");
-//    string data="3a2b1c",ndata="";
-//    for(size_t i = 0;i<data.size();i+=2)
-//    {
-//        ndata+=string_mult(int(data[i])-48,data[i+1]);
-//    }
-//    cout<<ndata;
+    cout<<"Enter what type of action you want to do : a for archive or d for dearchive";
+    string action;
+    cin>>action;
+    fileopening("input","output",action);
     return 0;
 }
+
 void fileopening(string input,string output,string mode)
 {
-    if(mode == "archive")
+    if(mode == "a=")
     {
         ifstream fin(output + ".bin", ios::binary | ios::in | ios::app);
         ofstream fout(input + ".bin", ios::binary | ios::in );
         RunLenght_archiver(fout, fin);
     }
-    if(mode=="dearchive") {
+    if(mode=="d=") {
         ifstream fin(input + ".bin", ios::binary | ios::in | ios::app);
         ofstream fout(output + ".bin", ios::binary | ios::in );
         RunLenght_dearchiver(fout, fin);
@@ -73,8 +57,9 @@ void RunLenght_archiver(ofstream &fout, ifstream &fin)
         ndata+=to_string(inrow)+data[i];
         inrow = 1;
     }
-    fout.write( (char *)&ndata, sizeof(ndata));
+    fout.write( (char *)&ndata[0], sizeof(ndata));
 }
+
 void RunLenght_dearchiver(ofstream &fout, ifstream &fin)
 {
     string data(istreambuf_iterator<char>(fin), {}),ndata="";
@@ -82,7 +67,7 @@ void RunLenght_dearchiver(ofstream &fout, ifstream &fin)
     {
         ndata+=string_mult(int(data[i])-48,data[i+1]);
     }
-    fout.write( (char *)&ndata, sizeof(ndata));
+    fout.write( (char *)&ndata[0], sizeof(ndata));
 }
 
 string string_mult(int num,char ch)
