@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/ramp8/Laboratorni_Z_OP/Laba4/cmake-build-debug/Archiver.cpp" "C:/Users/ramp8/Laboratorni_Z_OP/Laba4/cmake-build-debug/CMakeFiles/Laba4.dir/Archiver.cpp.obj"
-  "C:/Users/ramp8/Laboratorni_Z_OP/Laba4/main.cpp" "C:/Users/ramp8/Laboratorni_Z_OP/Laba4/cmake-build-debug/CMakeFiles/Laba4.dir/main.cpp.obj"
+  "C:/Users/Roman/source/repos/Laba4/cmake-build-debug/Archiver.cpp" "C:/Users/Roman/source/repos/Laba4/cmake-build-debug/CMakeFiles/Laba4.dir/Archiver.cpp.obj"
+  "C:/Users/Roman/source/repos/Laba4/main.cpp" "C:/Users/Roman/source/repos/Laba4/cmake-build-debug/CMakeFiles/Laba4.dir/main.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

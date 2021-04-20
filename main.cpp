@@ -1,137 +1,60 @@
 #include <iostream>
 #include <fstream>
-#include <cstring>
-#include "cmake-build-debug/Archiver.cpp"
+#include <vector>
+
 using namespace std;
 
-void fileopening(string ,string ,string);
-void RunLenght_archiver(ofstream &, ifstream &);
-void RunLenght_dearchiver(ofstream &,ifstream &);
-string string_mult(int,char);
+int findPrefix(vector<string>&, string &);
+void printWhatsleft(int, string);
+int readFile(const string, char*, const int);
 
 int main() {
-    //розбирався з файлами
-    /*ifstream fin;
-    ofstream fout;
-    fout.open("test.bin",ios::binary|ios::out|ios::app);
-    fin.open("test.bin",ios::binary|ios::in|ios::app);
-    string x="ab";
-    fout.write(x.data(), x.size());
-    fout.close();
-    std::string y(std::istreambuf_iterator<char>(fin), {});
-    cout<<y;
-    fin.close();*/
-    cout<<"Enter what type of action you want to do : 'a' for archive or 'd' for dearchive\n";
-    string action;
-    cin>>action;
-    fileopening("archived","dearchived",action);
-    return 0;
-}
+    const int bufsize = 100;
+    char buffer[bufsize];
+    int chars_read;
+    string filename = "input.txt";
 
-void fileopening(string input,string output,string mode)
-{
-    if(mode == "a")
-    {
-        ifstream fin(output + ".bin", ios::binary | ios::in | ios::app);
-        ofstream fout(input + ".bin", ios::binary | ios::in );
-        RunLenght_archiver(fout, fin);
-    }
-    if(mode=="d") {
-        ifstream fin(input + ".bin", ios::binary | ios::in | ios::app);
-        ofstream fout(output + ".bin", ios::binary | ios::in );
-        RunLenght_dearchiver(fout, fin);
-    }
-}
+    chars_read = readFile(filename, buffer, bufsize);
 
-void RunLenght_archiver(ofstream &fout, ifstream &fin)
-{
-    string data(istreambuf_iterator<char>(fin), {}),ndata;
-    int inrow = 1;
-    for(size_t i = 0;i<data.size();i++)
+    cout << "Chars read: " << chars_read << endl;
+
+
+}
+int findPrefix(vector<string>& dict, string& s) {
+
+    for (int i = 0; i < dict.size(); i++)
     {
-        while(data[i]==data[i+1] && i+1<data.size())
-        {
-            i++;
-            inrow++;
+        if (dict[i] == s){
+            return i;
         }
-        ndata+=to_string(inrow)+data[i];
-        inrow = 1;
     }
-    fout.write( (char *)&ndata[0], ndata.size());
+    return -1;
 }
 
-void RunLenght_dearchiver(ofstream &fout, ifstream &fin)
+void printWhatsleft(int start, string s)
 {
-    string data(istreambuf_iterator<char>(fin), {}),ndata="";
-    for(size_t i = 0;i<data.size();i+=2)
+    cout << ">> Left to encode: ";
+    for (int i = start; i < s.size(); i++)
     {
-        ndata+=string_mult(int(data[i])-48,data[i+1]);
+        cout << s[i];
     }
-    fout.write( (char *)&ndata[0], ndata.size());
+    cout << endl;
 }
 
-string string_mult(int num,char ch)
-{
-    string res="";
-    for(size_t i = 0;i < num;i++)
-        res+=ch;
-    return res;
-}
-/*class User
-        {
-public:
-            char * name;
-            int age;
-            User(char* name,int age)
-            {
-                this->name = name;
-                this->age = age;
-            }
-            User(){}
-        };
-*/
+int readFile(const string filename, char *buffer, const int bufsize) {
 
-/*fout.write((char *)&buf,sizeof (buf));
-   while(fin.read((char *)&b,sizeof (b)))
-   {
-       cout<<b;
-   }*/
+    ifstream infile;
+    int chars_read;
 
-/* if(fin.is_open())
-   {
-      char ch;
-      while(fin.read(ch))
-          {
-          cout<<ch<< " ";
-          }
+    infile.open("input.txt", ios::binary | ios::out);
+    if (!infile.is_open())
+    {
+        cout << "Failed to open the file!\n";
     }
-   else
-       {
-       cout<<"File wasn't open\n";
-       }
-   fout.close();
-   fin.close();*/
+    infile.read(buffer, bufsize);
+    chars_read = infile.gcount();
 
-/*
-u16 ReadU16(istream& file)
-{
-u16 val;
-u8 bytes[2];
+    infile.close();
 
-file.read( (char*)bytes, 2 );  // read 2 bytes from the file
-val = bytes[0] | (bytes[1] << 8);  // construct the 16-bit value from those bytes
-
-return val;
+    return chars_read;
 }
-
-void WriteU16(ostream& file, u16 val)
-{
-    u8 bytes[2];
-
-    // extract the individual bytes from our value
-    bytes[0] = (val) & 0xFF;  // low byte
-    bytes[1] = (val >> 8) & 0xFF;  // high byte
-
-    // write those bytes to the file
-    file.write( (char*)bytes, 2 );
-}*/
