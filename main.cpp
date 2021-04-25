@@ -5,6 +5,8 @@
 using namespace std;
 
 char* readFile(const string, int&);
+string toString(char* , int );
+string getByte(char );
 
 class RLA
         {
@@ -58,6 +60,34 @@ class RLA
 int main() {
 
     return 0;
+}
+
+string getByte(char ch)
+{
+    string phrase = "";
+    int byte = int(ch);
+
+    for (int i = 7; i > -1; i--)
+    {
+        if (byte & (1 << i))
+            phrase += '1';
+        else
+            phrase += '0';
+    }
+    return phrase;
+}
+
+string toString(char* input, int inputSize)
+{
+    string result = "";
+    string byte;
+    for (int i = 0; i < inputSize; i++)
+    {
+        byte = getByte(input[i]);
+        result += byte;
+    }
+
+    return result;
 }
 
 char* readFile(const string filename,int & bufsize) {
