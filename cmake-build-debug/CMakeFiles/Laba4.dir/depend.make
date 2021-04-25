@@ -3,6 +3,5 @@
 
 CMakeFiles/Laba4.dir/Archiver.cpp.obj: Archiver.cpp
 
-CMakeFiles/Laba4.dir/main.cpp.obj: Archiver.cpp
 CMakeFiles/Laba4.dir/main.cpp.obj: ../main.cpp
 

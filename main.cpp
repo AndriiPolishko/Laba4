@@ -2,14 +2,10 @@
 #include <fstream>
 #include <cstring>
 #include <cmath>
-
 using namespace std;
 
+char* readFile(const string, int&);
 
-void fileopening(string ,string ,string);
-void RunLenght_archiver(ofstream &, ifstream &);
-void RunLenght_dearchiver(ofstream &,ifstream &);
-string string_mult(int,char);
 class RLA
         {
     void fileopening(string input,string output,string mode)
@@ -62,4 +58,32 @@ class RLA
 int main() {
 
     return 0;
+}
+
+char* readFile(const string filename,int & bufsize) {
+
+    char *buffer = new char[bufsize];
+    ifstream infile;
+
+    infile.open(filename, ios::binary | ios::out);
+    if (!infile.is_open())
+    {
+        cout << "Failed to open the file!\n";
+        exit(0);
+    }
+
+    infile.read(buffer, bufsize);
+    bufsize = infile.gcount();
+
+    // Очищаємо пам`ять
+    char* temp = new char[bufsize];
+    for (int i = 0; i < bufsize; i++)
+    {
+        temp[i] = buffer[i];
+    }
+    delete[] buffer;
+
+    infile.close();
+
+    return temp;
 }
