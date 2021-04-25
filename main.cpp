@@ -12,6 +12,7 @@ string getByte(char );
 string intToBin(int dec, int k);
 void compressData(string& , string&);
 int findPrefix(vector<string>& , string& );
+void writeDataToFile(vector<char>& , string );
 
 class RLA
         {
@@ -65,6 +66,20 @@ class RLA
 int main() {
 
     return 0;
+}
+
+void writeDataToFile(vector<char>& output, string fileName) {
+    ofstream outfile;
+    outfile.open(fileName, ios::binary | ios::out);
+
+    if (!outfile.is_open())
+    {
+        cout << "Failed to open output file!" << endl;
+        cout << ">> writeDataToFile(vector<char>&, string)" << endl;
+    }
+    else {
+        outfile.write(&output[0], output.size());
+    }
 }
 
 int findPrefix(vector<string>& dict, string& s) {
