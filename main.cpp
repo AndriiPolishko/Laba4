@@ -6,6 +6,10 @@
 #include <algorithm>
 using namespace std;
 
+#define GB 1024 * 1024 * 1024
+#define MB 1024 * 1024
+#define KB 1024
+
 char* readFile(const string, int&);
 string toString(char* , int );
 string getByte(char );
@@ -13,6 +17,7 @@ string intToBin(int dec, int k);
 void compressData(string& , string&);
 int findPrefix(vector<string>& , string& );
 void writeDataToFile(vector<char>& , string );
+void convertDataToBin(string& sout, vector<char>& bout);
 
 vector<string> decompressData_pt1(string &);
 void decompressData_pt2(vector<string> &);
@@ -69,9 +74,51 @@ class RLA
     }
         };
 int main() {
+    int bufsize = MB,nbuf = MB;
+    char *input,*otp;
+    string fileName = "input.txt";
+    string outputFileName = "output.lz78";
+    string sInput,sotp;
+    string sOutput= "";
+    vector<char> output;
 
-    return 0;
+    cout << "Reading file....";
+    input = readFile(fileName, bufsize);
+    cout<<input<<endl;
+    cout << "Done\nConverting data into string...";
+    sInput = toString(input, bufsize);
+    cout<<sInput<<endl;
+    cout << "Done\nCompressing data...";
+    compressData(sOutput, sInput);
+    cout<<sOutput<<endl;
+    cout << "Done\nConverting data back to bin...";
+    convertDataToBin(sOutput, output);
+    cout << "Done\nWriting data in file...";
+    writeDataToFile(output, outputFileName);
+    cout << "Done" << endl;
+    otp = readFile(outputFileName, nbuf);
+    sotp = toString(otp,nbuf);
+    cout<<sotp<<endl;
+    vector<string> s = decompressData_pt1(sotp);
+    show_vec(s);
+    ///vector<string> res = decompressData_pt2(s);
+    decompressData_pt2(s);
+    show_vec(s);
+
+    string ori = decompressData_pt3(s);
+    cout<<endl<<ori;
+
 }
+
+void convertDataToBin(string& sout, vector<char>& bout) {
+    if (sout.size() % 8 != 0) {
+        int t = 8 - sout.size() % 8;
+        for (int i = 0; i < t; i++) {
+            sout += '0';
+        }
+    }
+}
+
 
 void writeDataToFile(vector<char>& output, string fileName) {
     ofstream outfile;
