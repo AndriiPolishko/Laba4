@@ -242,3 +242,85 @@ char* readFile(const string filename,int & bufsize) {
 
     return temp;
 }
+
+vector<string> decompressData_pt1(string &input)
+{
+    vector<string> dict;
+    dict.push_back("");
+    string sub, t;
+    int start,previuosPrefix, prefix = 0, k;
+    float len;
+    // Кодування
+    start = 0;
+    len = 1;
+    k = 1;
+    while (start<input.size())
+    {
+        len = log2(k);
+        if(len!=int(len))
+            len = int(len)+1;
+        len+=1;
+        sub = input.substr(start, len);
+        start += len;
+        k++;
+        //cout<<sub<<" ";
+        dict.push_back(sub);
+    }
+    return dict;
+}
+
+
+void decompressData_pt2(vector<string> &input)
+{
+    vector<string> res;
+    res.push_back("");
+    string temp;
+    char pref;
+    int ind;
+    for(int i = 0 ;i<input.size();i++)
+    {
+        temp = input[i];
+        pref = input[i].back();
+        if(temp.size()>1)
+        {
+            int ind = stoi(temp.substr(0,temp.size()-1),0,2);
+            temp=to_string(ind)+pref;
+            input[i] = temp;
+        }
+        else
+            input[i] = temp;
+
+    }
+}
+
+string decompressData_pt3(vector<string> &input)
+{
+    string temp,res;
+    char pref;
+    int pos;
+    for(int i = 0;i<input.size();i++)
+    {
+        temp = input[i];
+        if(temp.size()>1)
+        {
+            pref = temp.back();
+            pos = int(temp[0])-48;
+            temp =input[pos]+pref;
+            input[i]=temp;
+            cout<<temp<<endl;
+            res+=temp;
+
+        }
+        else
+            res+=temp;
+
+    }
+    return res;
+}
+
+void show_vec(const vector<string>& input)
+{
+    cout<<endl;
+    for(int i = 0;i<input.size();i++) cout<<input[i]<<" ";
+    cout<<endl;
+}
