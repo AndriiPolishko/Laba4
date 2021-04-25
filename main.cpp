@@ -3,12 +3,15 @@
 #include <cstring>
 #include <cmath>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 char* readFile(const string, int&);
 string toString(char* , int );
 string getByte(char );
+string intToBin(int dec, int k);
 void compressData(string& , string&);
+int findPrefix(vector<string>& , string& );
 
 class RLA
         {
@@ -62,6 +65,46 @@ class RLA
 int main() {
 
     return 0;
+}
+
+int findPrefix(vector<string>& dict, string& s) {
+
+    for (int i = 0; i < dict.size(); i++)
+    {
+        if (dict[i] == s) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+string intToBin(int dec, int k)
+{
+    string bin = "";
+    float l;
+
+    l = log2(k);
+
+
+    if (l == int(l))
+    {
+        k = l;
+    }
+    else {
+        k = l + 1;
+    }
+
+    for (int i = 0; i < k; i++)
+    {
+        if (dec & (1 << i)) {
+            bin += '1';
+        }
+        else {
+            bin += '0';
+        }
+    }
+    reverse(bin.begin(), bin.end());
+    return bin;
 }
 
 void compressData(string& output, string& input)
