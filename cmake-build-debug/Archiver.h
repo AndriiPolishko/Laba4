@@ -1,4 +1,0 @@
-#ifndef LABA4_ARCHIVER_H
-#define LABA4_ARCHIVER_H
-
-#endif //LABA4_ARCHIVER_H

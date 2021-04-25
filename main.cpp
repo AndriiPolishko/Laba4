@@ -14,6 +14,11 @@ void compressData(string& , string&);
 int findPrefix(vector<string>& , string& );
 void writeDataToFile(vector<char>& , string );
 
+vector<string> decompressData_pt1(string &);
+void decompressData_pt2(vector<string> &);
+string decompressData_pt3(vector<string> &input);
+void show_vec(const vector<string> &);
+
 class RLA
         {
     void fileopening(string input,string output,string mode)
