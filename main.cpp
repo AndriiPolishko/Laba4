@@ -2,11 +2,13 @@
 #include <fstream>
 #include <cstring>
 #include <cmath>
+#include <vector>
 using namespace std;
 
 char* readFile(const string, int&);
 string toString(char* , int );
 string getByte(char );
+void compressData(string& , string&);
 
 class RLA
         {
@@ -60,6 +62,66 @@ class RLA
 int main() {
 
     return 0;
+}
+
+void compressData(string& output, string& input)
+{
+    vector<string> dict = {""};
+    string sub, t;
+    int start, len, previuosPrefix, prefix = 0, k;
+
+    // Кодування
+    start = 0;
+    len = 1;
+    k = 1;
+    while (true)
+    {
+        if ((start+len)%2000==0)
+        {
+            cout << (start + len) << "/" << input.size() << endl;
+        }
+        if (start + len > input.size()) break;
+        sub = input.substr(start, len);
+        previuosPrefix = findPrefix(dict, sub);
+        if (previuosPrefix != -1)
+        {
+            if (start + len >= input.size())
+            {
+                t =  intToBin(prefix, k) + char(sub[sub.size() - 1]);
+                output += t;
+                break;
+            }
+            else if(dict.size()<100000){
+                prefix = previuosPrefix;
+                len++;
+            }
+            else {
+                t = intToBin(prefix, k) + char(sub[sub.size() - 1]);
+                output += t;
+                dict.push_back(sub);
+                k++;
+                start += len;
+                prefix = 0;
+                len = 1;
+            }
+        }
+        else {
+
+            t = intToBin(prefix, k) + char(sub[sub.size() - 1]);
+            output += t;
+            dict.push_back(sub);
+            k++;
+            start += len;
+            prefix = 0;
+            len = 1;
+
+        }
+    }
+
+    cout<<endl<<endl;
+    for(int i = 0;i<dict.size();i++)
+        cout<<dict[i]<<" ";
+    cout<<endl;
 }
 
 string getByte(char ch)
