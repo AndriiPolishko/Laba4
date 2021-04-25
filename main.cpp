@@ -4,6 +4,9 @@
 #include <cmath>
 #include <vector>
 #include <algorithm>
+#include <bitset>
+#include <sstream>
+
 using namespace std;
 
 #define GB 1024 * 1024 * 1024
@@ -23,7 +26,7 @@ vector<string> decompressData_pt1(string &);
 void decompressData_pt2(vector<string> &);
 string decompressData_pt3(vector<string> &input);
 void show_vec(const vector<string> &);
-
+vector<char> bin_to_str(string);
 class RLA
         {
     void fileopening(string input,string output,string mode)
@@ -104,11 +107,29 @@ int main() {
     ///vector<string> res = decompressData_pt2(s);
     decompressData_pt2(s);
     show_vec(s);
-
     string ori = decompressData_pt3(s);
-    cout<<endl<<ori;
+    vector<char> decomp = bin_to_str(ori);
+    writeDataToFile(decomp,"decoded.txt");
 
 }
+
+vector<char> bin_to_str(string data)
+{
+    std::stringstream sstream(data);
+    std::string output;
+    vector<char> mas;
+
+    while(sstream.good())
+    {
+        std::bitset<8> bits;
+        sstream >> bits;
+        char c = char(bits.to_ulong());
+        mas.push_back(c);
+    }
+    return mas;
+
+}
+
 
 void convertDataToBin(string& sout, vector<char>& bout) {
     if (sout.size() % 8 != 0) {
