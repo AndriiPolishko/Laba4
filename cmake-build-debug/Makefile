@@ -142,32 +142,59 @@ Laba4/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Laba4.dir\build.make CMakeFiles/Laba4.dir/build
 .PHONY : Laba4/fast
 
-Archiver.obj: Archiver.cpp.obj
+LZ78_C.obj: LZ78_C.cpp.obj
 
-.PHONY : Archiver.obj
+.PHONY : LZ78_C.obj
 
 # target to build an object file
-Archiver.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Laba4.dir\build.make CMakeFiles/Laba4.dir/Archiver.cpp.obj
-.PHONY : Archiver.cpp.obj
+LZ78_C.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Laba4.dir\build.make CMakeFiles/Laba4.dir/LZ78_C.cpp.obj
+.PHONY : LZ78_C.cpp.obj
 
-Archiver.i: Archiver.cpp.i
+LZ78_C.i: LZ78_C.cpp.i
 
-.PHONY : Archiver.i
+.PHONY : LZ78_C.i
 
 # target to preprocess a source file
-Archiver.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Laba4.dir\build.make CMakeFiles/Laba4.dir/Archiver.cpp.i
-.PHONY : Archiver.cpp.i
+LZ78_C.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Laba4.dir\build.make CMakeFiles/Laba4.dir/LZ78_C.cpp.i
+.PHONY : LZ78_C.cpp.i
 
-Archiver.s: Archiver.cpp.s
+LZ78_C.s: LZ78_C.cpp.s
 
-.PHONY : Archiver.s
+.PHONY : LZ78_C.s
 
 # target to generate assembly for a file
-Archiver.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Laba4.dir\build.make CMakeFiles/Laba4.dir/Archiver.cpp.s
-.PHONY : Archiver.cpp.s
+LZ78_C.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Laba4.dir\build.make CMakeFiles/Laba4.dir/LZ78_C.cpp.s
+.PHONY : LZ78_C.cpp.s
+
+LZ78_DC.obj: LZ78_DC.cpp.obj
+
+.PHONY : LZ78_DC.obj
+
+# target to build an object file
+LZ78_DC.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Laba4.dir\build.make CMakeFiles/Laba4.dir/LZ78_DC.cpp.obj
+.PHONY : LZ78_DC.cpp.obj
+
+LZ78_DC.i: LZ78_DC.cpp.i
+
+.PHONY : LZ78_DC.i
+
+# target to preprocess a source file
+LZ78_DC.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Laba4.dir\build.make CMakeFiles/Laba4.dir/LZ78_DC.cpp.i
+.PHONY : LZ78_DC.cpp.i
+
+LZ78_DC.s: LZ78_DC.cpp.s
+
+.PHONY : LZ78_DC.s
+
+# target to generate assembly for a file
+LZ78_DC.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Laba4.dir\build.make CMakeFiles/Laba4.dir/LZ78_DC.cpp.s
+.PHONY : LZ78_DC.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -205,9 +232,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Laba4
-	@echo ... Archiver.obj
-	@echo ... Archiver.i
-	@echo ... Archiver.s
+	@echo ... LZ78_C.obj
+	@echo ... LZ78_C.i
+	@echo ... LZ78_C.s
+	@echo ... LZ78_DC.obj
+	@echo ... LZ78_DC.i
+	@echo ... LZ78_DC.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

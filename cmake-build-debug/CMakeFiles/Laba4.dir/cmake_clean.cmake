@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Laba4.dir/Archiver.cpp.obj"
+  "CMakeFiles/Laba4.dir/LZ78_C.cpp.obj"
+  "CMakeFiles/Laba4.dir/LZ78_DC.cpp.obj"
   "CMakeFiles/Laba4.dir/main.cpp.obj"
   "Laba4.exe"
   "Laba4.exe.manifest"

@@ -89,34 +89,49 @@ CMakeFiles/Laba4.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Laba4.dir/main.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ramp8\Laboratorni_Z_OP\Laba4\main.cpp -o CMakeFiles\Laba4.dir\main.cpp.s
 
-CMakeFiles/Laba4.dir/Archiver.cpp.obj: CMakeFiles/Laba4.dir/flags.make
-CMakeFiles/Laba4.dir/Archiver.cpp.obj: Archiver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ramp8\Laboratorni_Z_OP\Laba4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Laba4.dir/Archiver.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Laba4.dir\Archiver.cpp.obj -c C:\Users\ramp8\Laboratorni_Z_OP\Laba4\cmake-build-debug\Archiver.cpp
+CMakeFiles/Laba4.dir/LZ78_C.cpp.obj: CMakeFiles/Laba4.dir/flags.make
+CMakeFiles/Laba4.dir/LZ78_C.cpp.obj: LZ78_C.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ramp8\Laboratorni_Z_OP\Laba4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Laba4.dir/LZ78_C.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Laba4.dir\LZ78_C.cpp.obj -c C:\Users\ramp8\Laboratorni_Z_OP\Laba4\cmake-build-debug\LZ78_C.cpp
 
-CMakeFiles/Laba4.dir/Archiver.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Laba4.dir/Archiver.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ramp8\Laboratorni_Z_OP\Laba4\cmake-build-debug\Archiver.cpp > CMakeFiles\Laba4.dir\Archiver.cpp.i
+CMakeFiles/Laba4.dir/LZ78_C.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Laba4.dir/LZ78_C.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ramp8\Laboratorni_Z_OP\Laba4\cmake-build-debug\LZ78_C.cpp > CMakeFiles\Laba4.dir\LZ78_C.cpp.i
 
-CMakeFiles/Laba4.dir/Archiver.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Laba4.dir/Archiver.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ramp8\Laboratorni_Z_OP\Laba4\cmake-build-debug\Archiver.cpp -o CMakeFiles\Laba4.dir\Archiver.cpp.s
+CMakeFiles/Laba4.dir/LZ78_C.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Laba4.dir/LZ78_C.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ramp8\Laboratorni_Z_OP\Laba4\cmake-build-debug\LZ78_C.cpp -o CMakeFiles\Laba4.dir\LZ78_C.cpp.s
+
+CMakeFiles/Laba4.dir/LZ78_DC.cpp.obj: CMakeFiles/Laba4.dir/flags.make
+CMakeFiles/Laba4.dir/LZ78_DC.cpp.obj: LZ78_DC.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ramp8\Laboratorni_Z_OP\Laba4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Laba4.dir/LZ78_DC.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Laba4.dir\LZ78_DC.cpp.obj -c C:\Users\ramp8\Laboratorni_Z_OP\Laba4\cmake-build-debug\LZ78_DC.cpp
+
+CMakeFiles/Laba4.dir/LZ78_DC.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Laba4.dir/LZ78_DC.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ramp8\Laboratorni_Z_OP\Laba4\cmake-build-debug\LZ78_DC.cpp > CMakeFiles\Laba4.dir\LZ78_DC.cpp.i
+
+CMakeFiles/Laba4.dir/LZ78_DC.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Laba4.dir/LZ78_DC.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ramp8\Laboratorni_Z_OP\Laba4\cmake-build-debug\LZ78_DC.cpp -o CMakeFiles\Laba4.dir\LZ78_DC.cpp.s
 
 # Object files for target Laba4
 Laba4_OBJECTS = \
 "CMakeFiles/Laba4.dir/main.cpp.obj" \
-"CMakeFiles/Laba4.dir/Archiver.cpp.obj"
+"CMakeFiles/Laba4.dir/LZ78_C.cpp.obj" \
+"CMakeFiles/Laba4.dir/LZ78_DC.cpp.obj"
 
 # External object files for target Laba4
 Laba4_EXTERNAL_OBJECTS =
 
 Laba4.exe: CMakeFiles/Laba4.dir/main.cpp.obj
-Laba4.exe: CMakeFiles/Laba4.dir/Archiver.cpp.obj
+Laba4.exe: CMakeFiles/Laba4.dir/LZ78_C.cpp.obj
+Laba4.exe: CMakeFiles/Laba4.dir/LZ78_DC.cpp.obj
 Laba4.exe: CMakeFiles/Laba4.dir/build.make
 Laba4.exe: CMakeFiles/Laba4.dir/linklibs.rsp
 Laba4.exe: CMakeFiles/Laba4.dir/objects1.rsp
 Laba4.exe: CMakeFiles/Laba4.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ramp8\Laboratorni_Z_OP\Laba4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Laba4.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ramp8\Laboratorni_Z_OP\Laba4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Laba4.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Laba4.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

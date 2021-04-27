@@ -80,10 +80,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/ramp8/Laboratorni_Z_OP/Laba4/cmake-build-debug/Archiver.cpp">
+		<Unit filename="C:/Users/ramp8/Laboratorni_Z_OP/Laba4/cmake-build-debug/LZ78_C.cpp">
 			<Option target="Laba4"/>
 		</Unit>
-		<Unit filename="C:/Users/ramp8/Laboratorni_Z_OP/Laba4/cmake-build-debug/Archiver.h">
+		<Unit filename="C:/Users/ramp8/Laboratorni_Z_OP/Laba4/cmake-build-debug/LZ78_C.h">
+			<Option target="Laba4"/>
+		</Unit>
+		<Unit filename="C:/Users/ramp8/Laboratorni_Z_OP/Laba4/cmake-build-debug/LZ78_DC.cpp">
+			<Option target="Laba4"/>
+		</Unit>
+		<Unit filename="C:/Users/ramp8/Laboratorni_Z_OP/Laba4/cmake-build-debug/LZ78_DC.h">
 			<Option target="Laba4"/>
 		</Unit>
 		<Unit filename="C:/Users/ramp8/Laboratorni_Z_OP/Laba4/main.cpp">
