@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/ramp8/Laboratorni_Z_OP/Laba4/cmake-build-debug/LZ78_C.cpp
-C:/Users/ramp8/Laboratorni_Z_OP/Laba4/cmake-build-debug/LZ78_C.h
+C:/Users/ramp8/Laboratorni_Z_OP/Laba4/cmake-build-debug/LZ78_DC.cpp
+C:/Users/ramp8/Laboratorni_Z_OP/Laba4/cmake-build-debug/LZ78_DC.h
 -
 
-C:/Users/ramp8/Laboratorni_Z_OP/Laba4/cmake-build-debug/LZ78_C.h
+C:/Users/ramp8/Laboratorni_Z_OP/Laba4/cmake-build-debug/LZ78_DC.h
 iostream
 -
 fstream
@@ -22,9 +22,5 @@ cmath
 algorithm
 -
 string
--
-
-C:/Users/ramp8/Laboratorni_Z_OP/Laba4/main.cpp
-C:/Users/ramp8/Laboratorni_Z_OP/Laba4/cmake-build-debug/LZ78_C.h
 -
 
