@@ -30,6 +30,7 @@ public:
     void init();
 
 private:
+    string vec_to_str(const vector<string>& vec);
     string Decompress(string& );
     void writeDataToFile(vector<char>&, string);
     char* readFile(const string, int&);

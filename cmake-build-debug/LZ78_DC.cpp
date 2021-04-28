@@ -12,6 +12,7 @@ LZ78_DC::LZ78_DC(string in, string out)
 LZ78_DC::~LZ78_DC()
 {
 }
+
 int LZ78_DC::last_zeros(string& bits)
 {
     string temp = bits.substr(bits.size()-8,8);
@@ -22,6 +23,68 @@ void LZ78_DC::delete_zeros(string& bits,int num)
 {
     bits.erase(bits.size()-num,bits.size());
 }
+
+vector<string> LZ78_DC::decompressData_pt1(string &input)
+{
+    vector<string> dict;
+    dict.push_back("");
+    string sub, t;
+    int start,previuosPrefix, prefix = 0, k;
+    float len;
+    // Кодування
+    start = 0;
+    len = 1;
+    k = 1;
+    while (start<input.size())
+    {
+        len = log2(k);
+        if(len!=int(len))
+            len = int(len)+1;
+        len+=1;
+        sub = input.substr(start, len);
+        start += len;
+        k++;
+        //cout<<sub<<" ";
+        dict.push_back(sub);
+    }
+
+    return dict;
+}
+
+void LZ78_DC::decompressData_pt2(vector<string> &input)
+{
+    vector<string> res;
+    res.push_back("");
+    string temp;
+    char pref;
+    int ind;
+    for(int i = 0 ;i<input.size();i++)
+    {
+
+        temp = input[i];
+        pref = input[i].back();
+        if(temp.size()>1)
+        {
+            int ind = stoi(temp.substr(0,temp.size()-1),0,2);
+
+            //temp=to_string(ind)+pref;
+            temp = input[ind]+pref;
+            input[i] = temp;
+        }
+        else
+            input[i] = temp;
+
+    }
+}
+
+string LZ78_DC::vec_to_str(const vector<string>& vec)
+{
+    string res="";
+    for(int i = 0;i<vec.size();i++)
+        res+=vec[i];
+    return res;
+}
+
 void LZ78_DC::init() {
     cout << "Decompresing data....\n";
     input = readFile(fileName, bufsize);
@@ -32,15 +95,15 @@ void LZ78_DC::init() {
         cout<<"You passed empy file";
         exit(0);
     }
-    cout<<endl<<sotp;
+    //cout<<endl<<sotp;
     zeros = last_zeros(sotp);
     vector<string> s = decompressData_pt1(sotp);
-    show_vec(s);
+    //show_vec(s);
     ///vector<string> res = decompressData_pt2(s);
     decompressData_pt2(s);
-    show_vec(s);
+    //show_vec(s);
 
-    string ori = decompressData_pt3(s);
+    string ori = vec_to_str(s);
     delete_zeros(ori,zeros);
     convertDataToBin(ori,output);
     writeDataToFile(output, outputFileName);
@@ -150,57 +213,8 @@ string  LZ78_DC::getByte(char ch)
 }
 
 
-vector<string> LZ78_DC::decompressData_pt1(string &input)
-{
-    vector<string> dict;
-    dict.push_back("");
-    string sub, t;
-    int start,previuosPrefix, prefix = 0, k;
-    float len;
-    // Кодування
-    start = 0;
-    len = 1;
-    k = 1;
-    while (start<input.size())
-    {
-        len = log2(k);
-        if(len!=int(len))
-            len = int(len)+1;
-        len+=1;
-        sub = input.substr(start, len);
-        start += len;
-        k++;
-        //cout<<sub<<" ";
-        dict.push_back(sub);
-    }
-    return dict;
-}
 
-
-void LZ78_DC::decompressData_pt2(vector<string> &input)
-{
-    vector<string> res;
-    res.push_back("");
-    string temp;
-    char pref;
-    int ind;
-    for(int i = 0 ;i<input.size();i++)
-    {
-        temp = input[i];
-        pref = input[i].back();
-        if(temp.size()>1)
-        {
-            int ind = stoi(temp.substr(0,temp.size()-1),0,2);
-            temp=to_string(ind)+pref;
-            input[i] = temp;
-        }
-        else
-            input[i] = temp;
-
-    }
-}
-
-string LZ78_DC::decompressData_pt3(vector<string> &input)
+/*string LZ78_DC::decompressData_pt3(vector<string> &input)
 {
     string temp,res;
     char pref;
@@ -224,7 +238,7 @@ string LZ78_DC::decompressData_pt3(vector<string> &input)
     }
     return res;
 }
-
+*/
 void LZ78_DC::show_vec(const vector<string>& input)
 {
     cout<<endl;

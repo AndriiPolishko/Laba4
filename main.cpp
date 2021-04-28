@@ -3,7 +3,7 @@
 using namespace  std;
 int main(int argc, char** argv) {
 //input.txt output.lz78 decomp.txt
-/*
+
     const char* ch = (const char* )argv[1];
     string s,ss,sss;
     int Size=0;
@@ -25,24 +25,20 @@ int main(int argc, char** argv) {
         sss.push_back(file3[Size2]);
         Size2++;
     }
-    //cout<<s;
-*/
-    //string s = string(ch);
-    /*if(s=="--compress")
-    {*/
-//    string ss=  "input.txt", sss = "output.lz78";
-//        LZ78_C comp(ss, sss);
-//        comp.init();
-    //}
 
-    /*if(s=="--decompress")
+    if(s=="--compress")
     {
-        string inp = string(argv[2]),otp = string(argv[3]);
-*/
-    string ss= "output.lz78" , sss = "decpmp.txt";
+
+       LZ78_C comp(ss, sss);
+       comp.init();
+    }
+
+    if(s=="--decompress")
+    {
+
         LZ78_DC decomp(ss, sss);
         decomp.init();
-   /* }*/
+    }
 
     return 0 ;
 }//Laba4.exe --decompress output.lz78 decomp.txt
