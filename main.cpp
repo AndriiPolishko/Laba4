@@ -1,46 +1,34 @@
-#include "C:\Users\ramp8\Laboratorni_Z_OP\Laba4\cmake-build-debug\LZ78_C.h"
-#include "C:\Users\ramp8\Laboratorni_Z_OP\Laba4\cmake-build-debug\LZ78_DC.h"
+#include "LZ78_C.h"
+#include "LZ78_DC.h"
 using namespace  std;
+string get_name( const char* );
 int main(int argc, char** argv) {
-//input.txt output.lz78 decomp.txt
 
-    const char* ch = (const char* )argv[1];
-    string s,ss,sss;
-    int Size=0;
-    while (ch[Size] != '\0') {
-        s.push_back(ch[Size]);
-        Size++;
-    }
+    string mode = get_name((const char* )argv[1]);
+    string input_file = get_name((const char* )argv[2]);
+    string output_file = get_name((const char* )argv[3]);
 
-    const char* file2 = (const char* )argv[2];
-    int Size1=0;
-    while (file2[Size1] != '\0') {
-        ss.push_back(file2[Size1]);
-        Size1++;
-    }
-
-    const char* file3 = (const char* )argv[3];
-    int Size2=0;
-    while (file3[Size2] != '\0') {
-        sss.push_back(file3[Size2]);
-        Size2++;
-    }
-
-    if(s=="--compress")
+    if(mode=="--compress")
     {
-
-       LZ78_C comp(ss, sss);
+       LZ78_C comp(input_file, output_file);
        comp.init();
     }
 
-    if(s=="--decompress")
+    if(mode=="--decompress")
     {
-
-        LZ78_DC decomp(ss, sss);
+        LZ78_DC decomp(input_file, output_file);
         decomp.init();
     }
 
     return 0 ;
-}//Laba4.exe --decompress output.lz78 decomp.txt
-//out.lz78
-//
+}
+
+string get_name( const char* ch)
+{
+    int size=0;
+    string s;
+    while (ch[size] != '\0') {
+        s.push_back(ch[size]);
+        size++;}
+    return s;
+}
